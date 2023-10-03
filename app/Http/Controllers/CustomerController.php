@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\customer;
 use App\Http\Resources\CustomerResource;
+use App\Http\Resources\CustomerCollection;
 class CustomerController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class CustomerController extends Controller
     public function index()
     {
         //show tat ca nguoi dung
-        return customer::all();
+        return new CustomerCollection(customer::paginate(5));
+       
     }
 
     /**
