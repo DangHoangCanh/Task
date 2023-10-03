@@ -25,3 +25,6 @@ Route::get('/register', function () {
 Route::get('/send', function () {
     return view('send');
 });
+Route::get('/send', function () {
+    return view('send');
+});
